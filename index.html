@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 英雄聯盟世界賽決賽 - 賽事總覽</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="2025 英雄聯盟世界賽決賽完整資訊">
+  <meta name="keywords" content="LOL, 英雄聯盟, Worlds 2025, 世界賽, 決賽">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        League of Legends Worlds 2025 Finals
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">
+              首頁
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#final-score">
+              比賽結果
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#vote-section">
+              投票預測
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#matches-detail">
+              賽事詳情
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">
+              聯絡我們
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <section id="home" class="hero-section-main">
+    <div class="hero-overlay-dark"></div>
+    <div class="container hero-content-center">
+      <div class="row align-items-center justify-content-center text-center">
+        <div class="col-12">
+          <h1 class="display-2 fw-bold text-white mb-4 hero-title">2025 英雄聯盟世界賽總決賽</h1>
+          <p class="lead text-white mb-2 fs-3"><strong>比賽時間：2025年11月9日</strong></p>
+          <p class="lead text-white fs-3"><strong>比賽地點：中國成都東安湖體育公園多功能體育館</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="final-score" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">
+        總決賽比分
+      </h2>
+      <div class="final-score-container">
+        <div class="team-score-card">
+          <a href="https://www.instagram.com/t1lol/" target="_blank" class="text-decoration-none">
+            <img src="assets/team1-logo.png" alt="T1" class="team-score-logo" 
+                 onerror="this.src='https://via.placeholder.com/150?text=T1'">
+            <h3 class="team-score-name">T1</h3>
+            <p class="team-region-badge">LCK</p>
+          </a>
+        </div>
+        <div class="final-score-display">
+          <div class="score-big">
+            <span class="score-number" id="team1-total-score">3</span>
+            <span class="score-separator">:</span>
+            <span class="score-number" id="team2-total-score">2</span>
+          </div>
+          <p class="score-label">BO5</p>
+          <p class="champion-label" id="champion-text">
+          </p>
+        </div>
+        <div class="team-score-card">
+          <a href="https://www.instagram.com/ktrolstagram/" target="_blank" class="text-decoration-none">
+            <img src="assets/team2-logo.png" alt="KT" class="team-score-logo"
+                 onerror="this.src='https://via.placeholder.com/150?text=KT'">
+            <h3 class="team-score-name">KT</h3>
+            <p class="team-region-badge">LCK</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="vote-section" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">
+        你支持哪支隊伍？
+      </h2>
+      <div class="vote-container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="vote-card">
+              <div class="vote-buttons-container" id="vote-buttons">
+                <div class="vote-team-section">
+                  <a href="https://www.instagram.com/t1lol/" target="_blank" class="vote-team-logo">
+                    <img src="assets/team1-logo.png" alt="T1" onerror="this.src='https://via.placeholder.com/150?text=T1'">
+                  </a>
+                  <h3 class="vote-team-name">T1</h3>
+                  <button class="btn-vote" onclick="vote('team1')" id="vote-btn-team1">
+                    <span class="vote-btn-text">投票支持</span>
+                  </button>
+                </div>
+                <div class="vote-vs-divider">
+                  <span class="vs-large">VS</span>
+                </div>
+                <div class="vote-team-section">
+                  <a href="https://www.instagram.com/ktrolstagram/" target="_blank" class="vote-team-logo">
+                    <img src="assets/team2-logo.png" alt="KT" onerror="this.src='https://via.placeholder.com/150?text=KT'">
+                  </a>
+                  <h3 class="vote-team-name">KT</h3>
+                  <button class="btn-vote" onclick="vote('team2')" id="vote-btn-team2">
+                    <span class="vote-btn-text">投票支持</span>
+                  </button>
+                </div>
+              </div>
+              <div class="vote-results-container" id="vote-results" style="display: none;">
+                <h4 class="text-center mb-4">目前投票結果</h4>
+                <div class="vote-result-item">
+                  <div class="vote-result-header">
+                    <span class="vote-result-team">T1</span>
+                    <span class="vote-result-percentage" id="team1-percentage">0%</span>
+                  </div>
+                  <div class="vote-progress-bar">
+                    <div class="vote-progress-fill team1-progress" id="team1-progress" style="width: 0%"></div>
+                  </div>
+                  <div class="vote-result-count">
+                    <span id="team1-votes">0</span> 票
+                  </div>
+                </div>
+                <div class="vote-result-item">
+                  <div class="vote-result-header">
+                    <span class="vote-result-team">KT</span>
+                    <span class="vote-result-percentage" id="team2-percentage">0%</span>
+                  </div>
+                  <div class="vote-progress-bar">
+                    <div class="vote-progress-fill team2-progress" id="team2-progress" style="width: 0%"></div>
+                  </div>
+                  <div class="vote-result-count">
+                    <span id="team2-votes">0</span> 票
+                  </div>
+                </div>
+                <div class="vote-total-info">
+                  <p class="text-center text-muted mb-0">
+                    總投票數：<span id="total-votes">0</span> 票
+                  </p>
+                </div>
+                <div class="vote-thank-you">
+                  <p class="text-center mb-0">✓ 感謝你的投票！</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="matches-detail" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">
+        各局賽事詳情
+      </h2>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="match-detail-card mb-4">
+            <div class="match-detail-header" onclick="toggleMatch('game1')">
+              <div class="match-vs-container">
+                <div class="match-team-left">
+                  <span class="team-name-vs">T1</span>
+                  <span class="mini-score win">勝</span>
+                </div>
+                <div class="match-center-info">
+                  <span class="match-number">第一局</span>
+                  <span class="vs-text">VS</span>
+                </div>
+                <div class="match-team-right">
+                  <span class="mini-score">負</span>
+                  <span class="team-name-vs">KT</span>
+                </div>
+              </div>
+              <i class="bi bi-chevron-down toggle-icon" id="game1-icon"></i>
+            </div>
+            <div class="match-detail-body" id="game1-body" style="display: none;">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h5 class="mb-3">【比賽資訊】</h5>
+                  <ul class="match-stats">
+                    <li><strong>比賽時長：</strong>36分09秒</li>
+                    <li><strong>擊殺數：</strong>25 - 11</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="mb-3">【關鍵數據】</h5>
+                  <ul class="match-stats">
+                    <li><strong>總經濟：</strong>75.2K - 61.3K</li>
+                    <li><strong>摧毀防禦塔：</strong>9 - 2</li>
+                    <li><strong>擊殺小龍：</strong>3 - 2</li>
+                    <li><strong>擊殺遠古巨龍：</strong>0 - 0</li>
+                    <li><strong>擊殺巴龍：</strong>2 - 0</li>
+                    <li><strong>擊殺預示者：</strong>0 - 1</li>
+                    <li><strong>擊殺虛空幼蟲：</strong>0 - 3</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="video-container mt-4">
+                <h5 class="mb-3">【比賽回放】</h5>
+                <div class="ratio ratio-16x9">
+                  <iframe 
+                    src="https://www.youtube.com/embed/sfVFGFfec64" 
+                    title="第一局比賽回放" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="match-detail-card mb-4">
+            <div class="match-detail-header" onclick="toggleMatch('game2')">
+              <div class="match-vs-container">
+                <div class="match-team-left">
+                  <span class="team-name-vs">T1</span>
+                  <span class="mini-score">負</span>
+                </div>
+                <div class="match-center-info">
+                  <span class="match-number">第二局</span>
+                  <span class="vs-text">VS</span>
+                </div>
+                <div class="match-team-right">
+                  <span class="mini-score win">勝</span>
+                  <span class="team-name-vs">KT</span>
+                </div>
+              </div>
+              <i class="bi bi-chevron-down toggle-icon" id="game2-icon"></i>
+            </div>
+            <div class="match-detail-body" id="game2-body" style="display: none;">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h5 class="mb-3">【比賽資訊】</h5>
+                  <ul class="match-stats">
+                    <li><strong>比賽時長：</strong>42分32秒</li>
+                    <li><strong>擊殺數：</strong>15 - 24</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="mb-3">【關鍵數據】</h5>
+                  <ul class="match-stats">
+                    <li><strong>總經濟：</strong>76.4K - 88.5K</li>
+                    <li><strong>摧毀防禦塔：</strong>3 - 12</li>
+                    <li><strong>擊殺小龍：</strong>2 - 4</li>
+                    <li><strong>擊殺遠古巨龍：</strong>0 - 0</li>
+                    <li><strong>擊殺巴龍：</strong>0 - 2</li>
+                    <li><strong>擊殺預示者：</strong>0 - 1</li>
+                    <li><strong>擊殺虛空幼蟲：</strong>0 - 3</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="video-container mt-4">
+                <h5 class="mb-3">【比賽回放】</h5>
+                <div class="ratio ratio-16x9">
+                  <iframe 
+                    src="https://www.youtube.com/embed/2ZldH1dHIjQ" 
+                    title="第二局比賽回放" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="match-detail-card mb-4">
+            <div class="match-detail-header" onclick="toggleMatch('game3')">
+              <div class="match-vs-container">
+                <div class="match-team-left">
+                  <span class="team-name-vs">T1</span>
+                  <span class="mini-score">負</span>
+                </div>
+                <div class="match-center-info">
+                  <span class="match-number">第三局</span>
+                  <span class="vs-text">VS</span>
+                </div>
+                <div class="match-team-right">
+                  <span class="mini-score win">勝</span>
+                  <span class="team-name-vs">KT</span>
+                </div>
+              </div>
+              <i class="bi bi-chevron-down toggle-icon" id="game3-icon"></i>
+            </div>
+            <div class="match-detail-body" id="game3-body" style="display: none;">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h5 class="mb-3">【比賽資訊】</h5>
+                  <ul class="match-stats">
+                    <li><strong>比賽時長：</strong>36分51秒</li>
+                    <li><strong>擊殺數：</strong>9 - 23</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="mb-3">【關鍵數據】</h5>
+                  <ul class="match-stats">
+                    <li><strong>總經濟：</strong>64.9K - 70.9K</li>
+                    <li><strong>摧毀防禦塔：</strong>5 - 8</li>
+                    <li><strong>擊殺小龍：</strong>2 - 4</li>
+                    <li><strong>擊殺遠古巨龍：</strong>0 - 0</li>
+                    <li><strong>擊殺巴龍：</strong>0 - 1</li>
+                    <li><strong>擊殺預示者：</strong>1 - 0</li>
+                    <li><strong>擊殺虛空幼蟲：</strong>3 - 0</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="video-container mt-4">
+                <h5 class="mb-3">【比賽回放】</h5>
+                <div class="ratio ratio-16x9">
+                  <iframe 
+                    src="https://www.youtube.com/embed/RG8c8OqnvVg" 
+                    title="第三局比賽回放" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="match-detail-card mb-4">
+            <div class="match-detail-header" onclick="toggleMatch('game4')">
+              <div class="match-vs-container">
+                <div class="match-team-left">
+                  <span class="team-name-vs">T1</span>
+                  <span class="mini-score win">勝</span>
+                </div>
+                <div class="match-center-info">
+                  <span class="match-number">第四局</span>
+                  <span class="vs-text">VS</span>
+                </div>
+                <div class="match-team-right">
+                  <span class="mini-score">負</span>
+                  <span class="team-name-vs">KT</span>
+                </div>
+              </div>
+              <i class="bi bi-chevron-down toggle-icon" id="game4-icon"></i>
+            </div>
+            <div class="match-detail-body" id="game4-body" style="display: none;">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h5 class="mb-3">【比賽資訊】</h5>
+                  <ul class="match-stats">
+                    <li><strong>比賽時長：</strong>29分40秒</li>
+                    <li><strong>擊殺數：</strong>17 - 8</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="mb-3">【關鍵數據】</h5>
+                  <ul class="match-stats">
+                    <li><strong>總經濟：</strong>58.9K - 43.8K</li>
+                    <li><strong>摧毀防禦塔：</strong>10 - 0</li>
+                    <li><strong>擊殺小龍：</strong>4 - 0</li>
+                    <li><strong>擊殺遠古巨龍：</strong>0 - 0</li>
+                    <li><strong>擊殺巴龍：</strong>1 - 0</li>
+                    <li><strong>擊殺預示者：</strong>1 - 0</li>
+                    <li><strong>擊殺虛空幼蟲：</strong>3 - 0</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="video-container mt-4">
+                <h5 class="mb-3">【比賽回放】</h5>
+                <div class="ratio ratio-16x9">
+                  <iframe 
+                    src="https://www.youtube.com/embed/l47xGNAvX4M" 
+                    title="第四局比賽回放" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="match-detail-card mb-4 decisive-game">
+            <div class="match-detail-header" onclick="toggleMatch('game5')">
+              <div class="match-vs-container">
+                <div class="match-team-left">
+                  <span class="team-name-vs">T1</span>
+                  <span class="mini-score win championship-game">勝利奪冠</span>
+                </div>
+                <div class="match-center-info">
+                  <span class="match-number">
+                  第五局
+                  </span>
+                  <span class="vs-text">VS</span>
+                </div>
+                <div class="match-team-right">
+                  <span class="mini-score">負</span>
+                  <span class="team-name-vs">KT</span>
+                </div>
+              </div>
+              <i class="bi bi-chevron-down toggle-icon" id="game5-icon"></i>
+            </div>
+            <div class="match-detail-body" id="game5-body" style="display: none;">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h5 class="mb-3">【比賽資訊】</h5>
+                  <ul class="match-stats">
+                    <li><strong>比賽時長：</strong>36分42秒</li>
+                    <li><strong>擊殺數：</strong>23 - 11</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="mb-3">【關鍵數據】</h5>
+                  <ul class="match-stats">
+                    <li><strong>總經濟：</strong>74.2K - 61.1K</li>
+                    <li><strong>摧毀防禦塔：</strong>10 - 1</li>
+                    <li><strong>擊殺小龍：</strong>4 - 2</li>
+                    <li><strong>擊殺遠古巨龍：</strong>0 - 0</li>
+                    <li><strong>擊殺巴龍：</strong>1 - 0</li>
+                    <li><strong>擊殺預示者：</strong>0 - 1</li>
+                    <li><strong>擊殺虛空幼蟲：</strong>2 - 1</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="video-container mt-4">
+                <h5 class="mb-3">【比賽回放】</h5>
+                <div class="ratio ratio-16x9">
+                  <iframe 
+                    src="https://www.youtube.com/embed/AXp6hL8MuDE" 
+                    title="第五局決勝局比賽回放" 
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
+              <div class="alert alert-success mt-4 text-center">
+                <h5>【冠軍】恭喜 T1 榮獲 2025 英雄聯盟世界冠軍！</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center mb-2">聯絡我們</h2>
+          <p class="text-center text-muted mb-5">發現資料需要更新？歡迎告訴我們！</p>
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <div id="form-message" style="display: none;" class="mb-3"></div>
+              <form id="contact-form" novalidate onsubmit="return false;">
+                <div class="mb-3">
+                  <label for="email" class="form-label">您的 Email</label>
+                  <input 
+                    type="email" 
+                    class="form-control" 
+                    id="email" 
+                    name="email"
+                    placeholder="example@email.com" 
+                    required>
+                  <div class="invalid-feedback">請輸入有效的 Email 地址</div>
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label">主旨</label>
+                  <input 
+                    type="text" 
+                    class="form-control" 
+                    id="subject" 
+                    name="subject"
+                    placeholder="請輸入主旨" 
+                    minlength="3"
+                    required>
+                  <div class="invalid-feedback">請輸入主旨</div>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">內容</label>
+                  <textarea 
+                    class="form-control" 
+                    id="message" 
+                    name="message"
+                    rows="5" 
+                    placeholder="請告訴我們需要更新的內容..."
+                    minlength="10"
+                    required></textarea>
+                  <div class="invalid-feedback">請輸入至少 10 個字元的內容</div>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg">送出訊息</button>
+                </div>
+                <p class="text-muted small mt-3 mb-0 text-center">訊息將寄送至：raymondlei.twn@gmail.com</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="fw-bold mb-3">LOL Worlds 2025 決賽</h5>
+          <p class="text-white">2025 英雄聯盟世界賽決賽資訊平台</p>
+          <p class="text-white small">本網站為期中專案作品</p>
+        </div>
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-3">快速連結</h5>
+          <ul class="list-unstyled">
+            <li><a href="#home" class="text-white">回到頂部</a></li>
+            <li><a href="#final-score" class="text-white">比賽結果</a></li>
+            <li><a href="#vote-section" class="text-white">投票預測</a></li>
+            <li><a href="#matches-detail" class="text-white">賽事詳情</a></li>
+            <li><a href="#contact" class="text-white">聯絡我們</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0 text-white">&copy; 2025 LOL Worlds Finals Info. 期中專案作品 - 淡江大學資管系</p>
+          <p class="mb-0 text-white small mt-2">製作：411630683 雷天佑</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+    ▲
+  </button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
